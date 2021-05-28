@@ -10,7 +10,7 @@ Shader "Custom/BlendComposite" {
 		// The Blend texture
 		[MaterialToggle] _UseBlend1("Use Blend 1", Int) = 1
 		_BlendColor ("Blend Texture Color", Color) = (1,1,1,1)
-        _BlendTex ("Blend Texture Albedo (RGBA)", 2D) = "white" {}
+        	_BlendTex ("Blend Texture Albedo (RGBA)", 2D) = "white" {}
 
 		// The Blend2 texture
 		[MaterialToggle] _UseBlend2 ("Use Blend 2", Int) = 1
