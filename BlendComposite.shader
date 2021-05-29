@@ -103,7 +103,6 @@ Shader "Custom/BlendComposite" {
 			fixed4 b = tex2D (_BlendTex, IN.uv_BlendTex) * _BlendColor;
 			fixed4 b2 = tex2D(_BlendTex2, IN.uv_BlendTex2) * _BlendColor2; 
 
-			fixed4 bAndB2 = b + b2;
 			// Albedo map
 			half3 finalBlend = c.rgb; // Start with base Albedo color
 
@@ -120,13 +119,7 @@ Shader "Custom/BlendComposite" {
 			}
 			
 			o.Albedo = finalBlend;
-			/*
-			float srcAlpha = src.a;
-			float destAlpha = (1 - srcAlpha) * dest.a;
-			Color destLayer = dest * destAlpha;
-			Color srcLayer = src * srcAlpha;
-			return destLayer + srcLayer;
-			*/
+			
 			// Removing detail so we can stay with Shader Model 3
 			if(_UseDetail == 1) {
 				//o.Albedo *= tex2D (_Detail, IN.uv_Detail).rgb ; // Add the secondary detail texture to albedo
